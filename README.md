@@ -1,6 +1,8 @@
 MFRC522-python
 ==============
 
+This a copy of https://github.com/mxgxw/MFRC522-python, without the usage of RPi.GPIO for the rst Pin. 
+
 A small class to interface with the NFC reader Module MFRC522 on the Raspberry Pi.
 
 This is a Python port of the example code for the NFC module MF522-AN.
@@ -13,7 +15,7 @@ https://github.com/lthiery/SPI-Py
 This repository includes a couple of examples showing how to read, write, and dump data from a chip. They are thoroughly commented, and should be easy to understand.
 
 ## Pins
-You can use [this](http://i.imgur.com/y7Fnvhq.png) image for reference.
+
 
 | Name | Pin # | Pin name   |
 |------|-------|------------|
@@ -23,7 +25,7 @@ You can use [this](http://i.imgur.com/y7Fnvhq.png) image for reference.
 | MISO | 21    | GPIO9      |
 | IRQ  | None  | None       |
 | GND  | Any   | Any Ground |
-| RST  | 22    | GPIO25     |
+| RST  | 22    | 3V3        |
 | 3.3V | 1     | 3V3        |
 
 ##Usage

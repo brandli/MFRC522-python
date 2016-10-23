@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 import spi
 import signal
 import time
@@ -109,9 +109,9 @@ class MFRC522:
   
   def __init__(self, dev='/dev/spidev0.0', spd=1000000):
     spi.openSPI(device=dev,speed=spd)
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(22, GPIO.OUT)
-    GPIO.output(self.NRSTPD, 1)
+#    GPIO.setmode(GPIO.BOARD)
+#    GPIO.setup(22, GPIO.OUT)
+#    GPIO.output(self.NRSTPD, 1)
     self.MFRC522_Init()
   
   def MFRC522_Reset(self):
@@ -341,6 +341,7 @@ class MFRC522:
     i = 0
     if len(backData) == 16:
       print "Sector "+str(blockAddr)+" "+str(backData)
+      return backData
   
   def MFRC522_Write(self, blockAddr, writeData):
     buff = []
@@ -381,7 +382,7 @@ class MFRC522:
         i = i+1
 
   def MFRC522_Init(self):
-    GPIO.output(self.NRSTPD, 1)
+#    GPIO.output(self.NRSTPD, 1)
   
     self.MFRC522_Reset();
     
